@@ -1,0 +1,25 @@
+\section{Awesome Window Manager}
+\label{cap_awesome_wm}
+Atention: this document is intended to be mount in a Tex generated document. Some keys or commands will appear inside double ` and double ' in the .tex files and inside double quotes on the pdf file generated in Latex. The correct representation is the one of double quotes, on the pdf file.
+
+\subsection{rc.lua configuration file}
+It's originally located at:
+	/etc/xdg/awesome/rc.lua
+
+It should be copied do user's home folder to avoid errors on the file syntax. Do:
+	\$ mkdir -p ~/.config/awesome
+	\$ cp /etc/xdg/awesome/rc.lua ~/.config/awesome/
+
+\subsection{Lock Screen}
+First, install xscreensaver.
+	\$ sudo apt-get install xscreensaver -y
+
+On the rc.lua file located at ~/.config/awesome/ put the following line under “Standard program” section.
+	awful.key({ }, ``F12'', function () awful.util.spawn("xscreensaver-command -lock") end),
+
+Where F12 is the keyboard shortcut to lock your screen. Then, at the end of rc.lua file add the following line to start the xscreensaver application.
+	awful.util.spawn_with_shell("xscreensaver -no-splash")
+
+Now, restart awesome window manager and test the screensaver.
+
+Thanks to: (https://mohammadthalif.wordpress.com/2011/04/27/how-to-implement-screen-lock-or-screen-saver-functionality-in-awesome-window-manager/)
