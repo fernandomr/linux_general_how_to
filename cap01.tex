@@ -1,3 +1,25 @@
+\section{PostgreSQL}
+
+\section{Send query result to file}
+
+copy (select * from db_table) to \'/tmp/consulta\';
+
+\subsection{PSQL Output formatting}
+When the query result is to large, psql automatically breaks lines. The output may get hard to read. Use \x to change the visualization. Example of the output:
+
+select * from dda where u_id=24 and dda_is_deleted='f';
+-[ RECORD 1 ]------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+dda_id             | 1121
+u_id               | 24
+ab_id              | 10304
+dda_type           | CHECKING
+dda_status         | PENDING_VERIFICATION
+dda_is_deleted     | f
+dda_verify_op_id   | 44938
+version            | 2
+
+Thanks to (http://stackoverflow.com/questions/9604723/alternate-output-format-for-psql).
+
 \section{Awesome Window Manager}
 \label{cap_awesome_wm}
 Atention: this document is intended to be mount in a Tex generated document. Some keys or commands will appear inside double ` and double ' in the .tex files and inside double quotes on the pdf file generated in Latex. The correct representation is the one of double quotes, on the pdf file.
