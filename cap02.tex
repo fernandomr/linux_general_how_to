@@ -1,0 +1,19 @@
+\section{Processes}
+
+\subsection{Send stdout and stderr to /dev/null}
+
+	yourcommand  > /dev/null 2>&1
+
+>/dev/null 2>&1 means redirect stdout to /dev/null AND stderr to the place where stdout points at that time
+
+Thanks to (http://www.google.com.br/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CB0QFjAAahUKEwjPu46_oJTGAhXKlQ0KHdJ2A0U&url=http\%3A\%2F\%2Fstackoverflow.com\%2Fquestions\%2F8220098\%2Fhow-to-redirect-the-output-of-an-application-in-background-to-dev-null&ei=xxuAVY-8KcqrNtLtjagE&usg=AFQjCNEeU99lk7PMx3FtO-Spq6QFrjU7fQ&bvm=bv.96041959,d.eXY)
+
+\subsection{Detach a process from terminal}
+Run it, at first. Then press Ctrl+z to suspend it and then type bg to resume it.
+
+Type 
+	jobs
+To see it and then 
+	disown \%1
+Replacing 1 with the number of your running job to detach it.
+Thanks to (http://serverfault.com/questions/34750/is-it-possible-to-detach-a-process-from-its-terminal-or-i-should-have-used-s).
